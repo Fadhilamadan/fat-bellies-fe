@@ -16,3 +16,15 @@ export const apiBranch = (name, openingHours, minPrice, maxPrice) => {
     },
   });
 };
+
+export const apiBranchUpdate = (branchId, data) => {
+  return axios({
+    method: 'PUT',
+    url: `${process.env.REACT_APP_API_URL}/api/branch/${branchId}`,
+    headers: {
+      ContentType: 'application/json',
+      Accept: 'application/json',
+    },
+    data: data,
+  });
+};

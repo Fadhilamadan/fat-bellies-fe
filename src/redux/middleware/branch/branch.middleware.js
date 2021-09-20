@@ -1,4 +1,4 @@
-import { apiBranch } from '../../../utils/api/branch';
+import { apiBranch, apiBranchUpdate } from '../../../utils/api/branch';
 import {
   isGetBranchFailed,
   isGetBranchLoading,
@@ -12,6 +12,33 @@ export const getBranch = (name, openingHours, minPrice, maxPrice) => {
       .then((res) => {
         if (res.data.status) {
           dispatch(isGetBranchSuccess(res.data.data));
+        } else {
+          dispatch(isGetBranchFailed());
+        }
+      })
+      .catch((err) => {
+        dispatch(isGetBranchFailed());
+      });
+  };
+};
+
+export const getBranchUpdate = (branchId, data) => {
+  return (dispatch) => {
+    dispatch(isGetBranchLoading());
+    apiBranchUpdate(branchId, data)
+      .then((res) => {
+        if (res.data.status) {
+          apiBranch()
+            .then((res) => {
+              if (res.data.status) {
+                dispatch(isGetBranchSuccess(res.data.data));
+              } else {
+                dispatch(isGetBranchFailed());
+              }
+            })
+            .catch((err) => {
+              dispatch(isGetBranchFailed());
+            });
         } else {
           dispatch(isGetBranchFailed());
         }
