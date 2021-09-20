@@ -14,11 +14,11 @@ const Branch = (props) => {
   const [maxPrice, setMaxPrice] = useState();
 
   useLayoutEffect(() => {
-    props.onGetPost();
+    props.onGetBranch();
   }, []);
 
   const handleFilter = () => {
-    props.onGetPost(branchName, openingHour, minPrice, maxPrice);
+    props.onGetBranch(branchName, openingHour, minPrice, maxPrice);
   };
 
   return (
@@ -109,7 +109,7 @@ const mapState = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onGetPost: (name, openingHours, minPrice, maxPrice) => {
+    onGetBranch: (name, openingHours, minPrice, maxPrice) => {
       return dispatch(getBranch(name, openingHours, minPrice, maxPrice));
     },
   };
