@@ -1,0 +1,44 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": "plugin:react/recommended",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "simple-import-sort"],
+  "rules": {
+    // simple import rules
+    "simple-import-sort/exports": "warn",
+    "simple-import-sort/imports": [
+      "warn",
+      {
+        "groups": [
+          ["^.+\\.s?css$"],
+          ["^\\u0000"],
+          ["^react$"],
+          ["^~"],
+          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"]
+        ]
+      }
+    ],
+
+    // react rules
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/no-unstable-nested-components": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-sort-props": ["warn", { "reservedFirst": ["key"] }],
+    "react/jsx-filename-extension": [
+      2,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ]
+  }
+}
