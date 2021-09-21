@@ -2,15 +2,19 @@ import React from 'react';
 
 const Navbar = () => {
   return (
-    <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-gray-700 mb-3">
-      <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
-        <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-          <span className="text-sm font-bold l eading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white">
-            Fat Bellies
-          </span>
+    <div className="container mx-auto my-4 px-4">
+      <div className="navbar mb-2 shadow-lg bg-neutral text-neutral-content rounded-box">
+        <div className="flex-1 px-2 mx-2">
+          <span className="text-lg font-bold">Fat Bellies</span>
+        </div>
+        <div className="flex-none px-2 mx-2 lg:flex">
+          <div className="flex items-stretch">
+            <a className="btn btn-ghost btn-sm rounded-btn">Create Branch</a>
+            <a className="btn btn-ghost btn-sm rounded-btn">Create Buffet</a>
+          </div>
         </div>
       </div>
-    </nav>
+    </div>
   );
 };
 

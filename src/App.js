@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Footer from './components/layout/footer';
 import Navbar from './components/layout/navbar';
 import Router from './router';
 
@@ -10,6 +11,7 @@ const App = () => {
     <BrowserRouter>
       <Navbar />
       <Router />
+      <Footer />
     </BrowserRouter>
   );
 };
