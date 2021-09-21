@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import BuffetDeleteModal from './deleteModal';
 import BuffetEditModal from './editModal';
 
 import rupiah from 'rupiah-format';
@@ -8,7 +9,7 @@ const BuffetCard = (props) => {
   const [modal, setModal] = useState(false);
   const [modalType, setModalType] = useState();
 
-  const handleAction = (branchId, type) => {
+  const handleAction = (type) => {
     setModal(true);
     setModalType(type);
   };
@@ -33,13 +34,13 @@ const BuffetCard = (props) => {
           <div className="card-actions">
             <button
               className="btn btn-outline btn-sm"
-              onClick={() => handleAction(props.item, 'EDIT')}
+              onClick={() => handleAction('EDIT')}
             >
               Edit
             </button>
             <button
               className="btn btn-outline btn-sm"
-              onClick={() => handleAction(props.item, 'DELETE')}
+              onClick={() => handleAction('DELETE')}
             >
               Delete
             </button>
@@ -47,9 +48,11 @@ const BuffetCard = (props) => {
         </div>
       </div>
 
-      {modal && modalType === 'EDIT' && (
+      {modal && modalType === 'EDIT' ? (
         <BuffetEditModal item={props.item} setModal={setModal} />
-      )}
+      ) : modal && modalType === 'DELETE' ? (
+        <BuffetDeleteModal item={props.item} setModal={setModal} />
+      ) : null}
     </>
   );
 };

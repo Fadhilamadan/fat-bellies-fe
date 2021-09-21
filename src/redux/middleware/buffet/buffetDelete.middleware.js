@@ -1,14 +1,14 @@
-import { apiBuffetUpdate } from '../../../utils/api/buffet';
+import { apiBuffetDelete } from '../../../utils/api/buffet';
 import {
   isGetBranchFailed,
   isGetBranchLoading,
 } from '../../action/branch/branch.action';
 import { getBranch } from '../branch/branch.middleware';
 
-export const getBuffetUpdate = (buffetId, data) => {
+export const getBuffetDelete = (buffetId) => {
   return (dispatch) => {
     dispatch(isGetBranchLoading());
-    apiBuffetUpdate(buffetId, data)
+    apiBuffetDelete(buffetId)
       .then((res) => {
         if (res.data.status) {
           dispatch(getBranch());
