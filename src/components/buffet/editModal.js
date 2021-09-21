@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { getBuffetUpdate } from '../../redux/middleware/buffet/buffet.middleware';
+import { getBuffetUpdate } from '../../redux/middleware/buffet/buffetUpdate.middleware';
 import { dayStatic } from '../../utils/const/day';
 
 import { connect } from 'react-redux';
