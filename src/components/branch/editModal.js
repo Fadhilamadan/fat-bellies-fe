@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { getBranchUpdate } from '../../redux/middleware/branch/branch.middleware';
+import { getBranchUpdate } from '../../redux/middleware/branch/branchUpdate.middleware';
 import { timeStatic } from '../../utils/const/time';
 
 import { connect } from 'react-redux';
