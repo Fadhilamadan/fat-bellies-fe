@@ -17,6 +17,29 @@ export const apiBranch = (name, openingHours, minPrice, maxPrice) => {
   });
 };
 
+export const apiBranchDetail = (branchId) => {
+  return axios({
+    method: 'GET',
+    url: `${process.env.REACT_APP_API_URL}/api/branch/${branchId}`,
+    headers: {
+      ContentType: 'application/json',
+      Accept: 'application/json',
+    },
+  });
+};
+
+export const apiBranchStore = (data) => {
+  return axios({
+    method: 'POST',
+    url: `${process.env.REACT_APP_API_URL}/api/branch`,
+    headers: {
+      ContentType: 'application/json',
+      Accept: 'application/json',
+    },
+    data: data,
+  });
+};
+
 export const apiBranchUpdate = (branchId, data) => {
   return axios({
     method: 'PUT',
@@ -26,5 +49,16 @@ export const apiBranchUpdate = (branchId, data) => {
       Accept: 'application/json',
     },
     data: data,
+  });
+};
+
+export const apiBranchDelete = (branchId) => {
+  return axios({
+    method: 'DELETE',
+    url: `${process.env.REACT_APP_API_URL}/api/branch/${branchId}`,
+    headers: {
+      ContentType: 'application/json',
+      Accept: 'application/json',
+    },
   });
 };
