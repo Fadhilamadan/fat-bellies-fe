@@ -1,5 +1,16 @@
 import axios from 'axios';
 
+export const apiBuffet = () => {
+  return axios({
+    method: 'GET',
+    url: `${process.env.REACT_APP_API_URL}/api/buffet`,
+    headers: {
+      ContentType: 'application/json',
+      Accept: 'application/json',
+    },
+  });
+};
+
 export const apiBuffetDetail = (buffetId) => {
   return axios({
     method: 'GET',
