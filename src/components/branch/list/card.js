@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import BranchEditModal from '../../branch/editModal';
+import BuffetCreateModal from '../../buffet/createModal';
 import BuffetCard from '../../buffet/list/card';
 import BranchDeleteModal from '../deleteModal';
 
@@ -62,6 +63,13 @@ const BranchCard = (props) => {
             <button className="btn btn-sm" onClick={() => handleAction('DELETE')}>
               Delete
             </button>
+
+            <button
+              className="btn btn-success btn-sm ml-auto"
+              onClick={() => handleAction('CREATE_BUFFET')}
+            >
+              Create Buffet
+            </button>
           </div>
         </div>
       </div>
@@ -70,6 +78,8 @@ const BranchCard = (props) => {
         <BranchEditModal item={props.item} setModal={setModal} />
       ) : modal && modalType === 'DELETE' ? (
         <BranchDeleteModal item={props.item} setModal={setModal} />
+      ) : modal && modalType === 'CREATE_BUFFET' ? (
+        <BuffetCreateModal item={props.item} setModal={setModal} />
       ) : null}
     </>
   );
