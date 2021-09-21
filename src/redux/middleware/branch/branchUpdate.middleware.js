@@ -1,8 +1,10 @@
-import { apiBranch, apiBranchUpdate } from '../../../utils/api/branch';
+import { apiBranchUpdate } from '../../../utils/api/branch';
 import {
   isGetBranchFailed,
   isGetBranchLoading,
 } from '../../action/branch/branch.action';
+
+import { getBranch } from './branch.middleware';
 
 export const getBranchUpdate = (branchId, data) => {
   return (dispatch) => {
@@ -10,7 +12,7 @@ export const getBranchUpdate = (branchId, data) => {
     apiBranchUpdate(branchId, data)
       .then((res) => {
         if (res.data.status) {
-          dispatch(apiBranch());
+          dispatch(getBranch());
         } else {
           dispatch(isGetBranchFailed());
         }
