@@ -11,7 +11,7 @@ const BranchCard = (props) => {
   const [modal, setModal] = useState(false);
   const [modalType, setModalType] = useState();
 
-  const handleAction = (branchId, type) => {
+  const handleAction = (type) => {
     setModal(true);
     setModalType(type);
   };
@@ -55,14 +55,11 @@ const BranchCard = (props) => {
           <div className="card-actions">
             <button
               className="btn btn-warning btn-sm"
-              onClick={() => handleAction(props.item, 'EDIT')}
+              onClick={() => handleAction('EDIT')}
             >
               Edit
             </button>
-            <button
-              className="btn btn-sm"
-              onClick={() => handleAction(props.item, 'DELETE')}
-            >
+            <button className="btn btn-sm" onClick={() => handleAction('DELETE')}>
               Delete
             </button>
           </div>
