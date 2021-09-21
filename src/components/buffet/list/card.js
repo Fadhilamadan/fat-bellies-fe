@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import BuffetDeleteModal from './deleteModal';
-import BuffetEditModal from './editModal';
+import BuffetDeleteModal from '../deleteModal';
+import BuffetEditModal from '../editModal';
 
 import rupiah from 'rupiah-format';
 

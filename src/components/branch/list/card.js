@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import BranchEditModal from '../../branch/editModal';
-import BuffetCard from '../../buffet/card';
+import BuffetCard from '../../buffet/list/card';
 import BranchDeleteModal from '../deleteModal';
 
 import _ from 'lodash';
