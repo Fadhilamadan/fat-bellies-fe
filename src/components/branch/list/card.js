@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import BranchEditModal from '../../branch/editModal';
 import BuffetCard from '../../buffet/card';
+import BranchDeleteModal from '../deleteModal';
 
 import _ from 'lodash';
 import rupiah from 'rupiah-format';
@@ -68,9 +69,11 @@ const BranchCard = (props) => {
         </div>
       </div>
 
-      {modal && modalType === 'EDIT' && (
+      {modal && modalType === 'EDIT' ? (
         <BranchEditModal item={props.item} setModal={setModal} />
-      )}
+      ) : modal && modalType === 'DELETE' ? (
+        <BranchDeleteModal item={props.item} setModal={setModal} />
+      ) : null}
     </>
   );
 };
