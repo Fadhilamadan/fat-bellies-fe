@@ -19,7 +19,6 @@
     "redux": "^4.1.1",
     "redux-thunk": "^2.3.0",
     "rupiah-format": "^1.0.0",
-    "serve": "^12.0.1",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
