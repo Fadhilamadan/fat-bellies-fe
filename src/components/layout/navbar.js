@@ -19,14 +19,16 @@ const Navbar = () => {
             <span className="text-lg font-bold">Fat Bellies</span>
           </div>
           <div className="flex-none px-2 mx-2 lg:flex">
-            <div className="flex items-stretch">
-              <a
-                className="btn btn-ghost btn-sm rounded-btn"
-                onClick={() => handleAction('BRANCH')}
-              >
-                Create Branch
-              </a>
-            </div>
+            {location.search === '?as=admin' && (
+              <div className="flex items-stretch">
+                <a
+                  className="btn btn-ghost btn-sm rounded-btn"
+                  onClick={() => handleAction('BRANCH')}
+                >
+                  Create Branch
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </div>

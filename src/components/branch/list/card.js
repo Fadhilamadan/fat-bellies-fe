@@ -53,24 +53,26 @@ const BranchCard = (props) => {
             )}
           </div>
 
-          <div className="card-actions">
-            <button
-              className="btn btn-warning btn-sm"
-              onClick={() => handleAction('EDIT')}
-            >
-              Edit
-            </button>
-            <button className="btn btn-sm" onClick={() => handleAction('DELETE')}>
-              Delete
-            </button>
+          {location.search === '?as=admin' && (
+            <div className="card-actions">
+              <button
+                className="btn btn-warning btn-sm"
+                onClick={() => handleAction('EDIT')}
+              >
+                Edit
+              </button>
+              <button className="btn btn-sm" onClick={() => handleAction('DELETE')}>
+                Delete
+              </button>
 
-            <button
-              className="btn btn-success btn-sm ml-auto"
-              onClick={() => handleAction('CREATE_BUFFET')}
-            >
-              Create Buffet
-            </button>
-          </div>
+              <button
+                className="btn btn-success btn-sm ml-auto"
+                onClick={() => handleAction('CREATE_BUFFET')}
+              >
+                Create Buffet
+              </button>
+            </div>
+          )}
         </div>
       </div>
 

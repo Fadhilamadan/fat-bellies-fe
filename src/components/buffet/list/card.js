@@ -31,20 +31,22 @@ const BuffetCard = (props) => {
             Time: {props.item.start_time} - {props.item.end_time}
           </p>
 
-          <div className="card-actions">
-            <button
-              className="btn btn-outline btn-sm"
-              onClick={() => handleAction('EDIT')}
-            >
-              Edit
-            </button>
-            <button
-              className="btn btn-outline btn-sm"
-              onClick={() => handleAction('DELETE')}
-            >
-              Delete
-            </button>
-          </div>
+          {location.search === '?as=admin' && (
+            <div className="card-actions">
+              <button
+                className="btn btn-outline btn-sm"
+                onClick={() => handleAction('EDIT')}
+              >
+                Edit
+              </button>
+              <button
+                className="btn btn-outline btn-sm"
+                onClick={() => handleAction('DELETE')}
+              >
+                Delete
+              </button>
+            </div>
+          )}
         </div>
       </div>
 
